@@ -1,5 +1,6 @@
 import Navbar from './components/Navbar';
 import NavSecondary from './components/NavSecondary';
+import HomeSlider from './components/HomeSlider';
 import './App.css'
 
 function App() {
@@ -8,6 +9,7 @@ function App() {
     <>
       <Navbar />
       <NavSecondary />
+      <HomeSlider />
     </>
   )
 }
