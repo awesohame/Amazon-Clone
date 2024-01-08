@@ -1,6 +1,6 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronLeft, faChevronRight } from '@fortawesome/free-solid-svg-icons';
-import { useState } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 
 type Images = {
     url: string;
@@ -8,7 +8,9 @@ type Images = {
 }[]
 
 export default function Slider(props: { slides: Images }) {
+
     const [currIndex, setCurrIndex] = useState(1);
+
     const slideStyle = {
         height: "100%",
         width: "100%",
@@ -17,15 +19,30 @@ export default function Slider(props: { slides: Images }) {
         backgroundSize: 'cover'
     };
 
-    function prevIndex() {
+    let prevIndex = () => {
         let newIndex = currIndex == 0 ? props.slides.length - 1 : currIndex - 1;
         setCurrIndex(newIndex);
     }
 
-    function nextIndex() {
+    let nextIndex = useCallback(() => {
         let newIndex = currIndex == props.slides.length - 1 ? 0 : currIndex + 1;
         setCurrIndex(newIndex);
-    }
+    }, [currIndex, props.slides]);
+
+    const timeRef: any = useRef(null);
+
+    useEffect(() => {
+        if (timeRef.current) {
+            clearTimeout(timeRef.current);
+        }
+        timeRef.current = setTimeout(() => {
+            nextIndex();
+        }, 5000)
+
+        return () => clearTimeout(timeRef.current);
+    }, [nextIndex])
+
+
 
     console.log(props.slides[currIndex].url);
 
