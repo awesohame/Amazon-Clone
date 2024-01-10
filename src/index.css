@@ -11,6 +11,6 @@
   display: flex;
   flex-direction: column;
   height: 500vh;
-  background-color: aqua;
+  background-color: #e3e6e6;
   /* overflow-x: hidden; */
 }

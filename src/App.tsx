@@ -1,15 +1,21 @@
+import './App.css';
+import { BrowserRouter } from 'react-router-dom';
+
 import Navbar from './components/Navbar';
 import NavSecondary from './components/NavSecondary';
 import HomeSlider from './components/HomeSlider';
-import './App.css'
+import Body from './components/Body';
 
 function App() {
 
   return (
     <>
-      <Navbar />
-      <NavSecondary />
-      <HomeSlider />
+      <BrowserRouter>
+        <Navbar />
+        <NavSecondary />
+        <HomeSlider />
+        <Body />
+      </BrowserRouter>
     </>
   )
 }

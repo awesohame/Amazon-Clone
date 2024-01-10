@@ -11,7 +11,7 @@ const images: {
 
 export default function HomeSlider() {
     return (
-        <div className="w-full h-[77vh] px-4 absolute top-[13vh]">
+        <div className="w-full h-[77vh] px-3 absolute top-[13vh]">
             <Slider slides={images} />
         </div>
     )

@@ -4,7 +4,7 @@ import { faLocationDot, faCaretDown, faCartShopping, faMagnifyingGlass } from '@
 
 export default function Navbar() {
     return (
-        <div className="bg-[#131921] h-[8vh] w-[100%] flex items-center justify-evenly text-[#fff] sticky top-0">
+        <div className="bg-[#131921] h-[8vh] w-[100%] flex items-center justify-evenly text-[#fff] sticky top-0 z-50">
             <img src={amazon} alt="" className='w-24 mx-2' />
 
             <div className='flex items-center mx-2'>

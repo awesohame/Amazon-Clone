@@ -43,9 +43,6 @@ export default function Slider(props: { slides: Images }) {
     }, [nextIndex])
 
 
-
-    console.log(props.slides[currIndex].url);
-
     return (
         // <div className={`bg-[url('${props.slides[currIndex].url}')] h-full w-full bg-cover`}></div>
         <div className='relative h-full'>
@@ -60,7 +57,7 @@ export default function Slider(props: { slides: Images }) {
                     className='text-white text-[45px] absolute top-[20%] right-0 mx-4 cursor-pointer'
                     onClick={nextIndex}
                 />
-                <div className='bg-gradient-to-b from-transparent from-45% to-white h-full w-full'></div>
+                <div className='bg-gradient-to-b from-transparent from-45% to-[#e3e6e6] h-full w-full'></div>
             </div>
         </div>
 
